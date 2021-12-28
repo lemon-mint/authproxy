@@ -1,0 +1,28 @@
+struct Packet {
+    PacketType type;
+
+    bytes payload;
+}
+
+enum PacketType {
+    Connect,
+    ConnectResponse,
+
+    Upstream,
+    Downstream,
+
+    PublicKey
+}
+
+struct Connect {
+    string host;
+}
+
+struct ConnectResponse {
+    bool success;
+}
+
+struct Stream {
+    bytes data;
+    bool error;
+}
